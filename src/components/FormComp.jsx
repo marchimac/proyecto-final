@@ -19,6 +19,15 @@ function FormComp() {
         <Form.Control className='text-center' type="text" id='edad' placeholder="Introduce tu edad en años" />
       </Form.Group>
 
+      <Form.Select className='mb-3 text-center' >
+        <option>Selecciona tu nivel de actividad</option>
+        <option value='sedentaria'>Sedentaria</option>
+        <option value='ligera'>Ligera</option>
+        <option value='moderada'>Moderada</option>
+        <option value='intensa'>Intensa</option>
+        <option value='muy-intensa'>Muy intensa</option>
+      </Form.Select>
+
       <Form.Group className="mb-3 d-flex justify-content-around" controlId="masculino">
         <Form.Check type="radio" name='gender' id='masculino' label="Masculino" />
       </Form.Group>
