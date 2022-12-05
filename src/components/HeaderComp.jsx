@@ -1,14 +1,17 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import logo from '../images/book-shop.png'
+const styles = {
+  imgLogo: {
+    width: '10%'
+  }
+}
 
 function HeaderComp() {
   return (
     <>
-      <Navbar bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand  className='m-auto'>Calculadora de la Tasa Metabólica Basal</Navbar.Brand>
-        </Container>
-      </Navbar>
+    <div className='d-flex m-3'>
+      <img className='m-2' src={logo} style={styles.imgLogo} alt='' />
+      <h1 className='m-auto' >Fernando Martínez Sánchez</h1>
+    </div>
     </>
   );
 }

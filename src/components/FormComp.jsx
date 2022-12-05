@@ -6,7 +6,7 @@ function FormComp() {
     <Form className='m-5'>
       <Form.Group className="mb-3" controlId="peso">
         <Form.Label>Peso</Form.Label>
-        <Form.Control className='text-center' type="text" id='peso' placeholder="Introduce tu peso en kg" />
+        <Form.Control className='text-center' type="text" placeholder="Introduce tu peso en kg" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="estatura">
@@ -19,11 +19,11 @@ function FormComp() {
         <Form.Control className='text-center' type="text" id='edad' placeholder="Introduce tu edad en años" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="masculino">
+      <Form.Group className="mb-3 d-flex justify-content-around" controlId="masculino">
         <Form.Check type="radio" name='gender' id='masculino' label="Masculino" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="femenino">
+      <Form.Group className="mb-3 d-flex justify-content-around" controlId="femenino">
         <Form.Check type="radio" name='gender' id='femenino' label="Femenino" />
       </Form.Group>
 
