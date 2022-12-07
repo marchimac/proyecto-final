@@ -1,10 +1,11 @@
+import { FormGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function FormComp() {
 
   return (
-    <Form className='m-5 border p-3'>
+    <Form style={{width: '75%'}} className='m-auto mt-3 border p-3 text-center'>
       <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="peso">
         <Form.Label>Peso</Form.Label>
         <Form.Control className='text-center' type="text" placeholder="Introduce tu peso en kg" />
@@ -29,21 +30,42 @@ function FormComp() {
         <option value='muy-intensa'>Muy intensa</option>
       </Form.Select>
 
-      <Form.Group className="mb-3 d-flex justify-content-around" controlId="masculino">
-        <Form.Check type="radio" name='gender' id='masculino' label="Masculino" />
-      </Form.Group>
+      <FormGroup className='mb-3 border pt-3 rounded'>
 
-      <Form.Group className="mb-3 d-flex justify-content-around" controlId="femenino">
-        <Form.Check type="radio" name='gender' id='femenino' label="Femenino" />
-      </Form.Group>
+        <Form.Label>Selecciona tu género</Form.Label>
+        <Form.Group className="mb-3 d-flex justify-content-around" controlId="masculino">
+          <Form.Check type="radio" name='gender' id='masculino' label="Masculino" />
+        </Form.Group>
 
-      <Button className='m-1' variant="primary" type="submit">
-        Calcular
-      </Button>
+        <Form.Group className="mb-3 d-flex justify-content-around" controlId="femenino">
+          <Form.Check type="radio" name='gender' id='femenino' label="Femenino" />
+        </Form.Group>
+      </FormGroup>
 
-      <Button className='m-1' variant="secondary" type="reset">
-        Borrar
-      </Button>
+      <FormGroup className='mb-3 border pt-3 rounded'>
+
+        <Form.Label>Elige el metodo para el cálculo</Form.Label>
+
+        <Form.Group className="mb-3 d-flex justify-content-around" controlId="harris">
+          <Form.Check type="radio" name='method' id='harris' label="Harris-Benedict" />
+        </Form.Group>
+
+        <Form.Group className="mb-3 d-flex justify-content-around" controlId="femenino">
+          <Form.Check type="radio" name='method' id='mifflin' label="Mifflin-St Jeor" />
+        </Form.Group>
+      </FormGroup>
+
+
+      <FormGroup className='mb-3 border p-3 rounded' >
+        <Button className='m-1' variant="primary" type="submit">
+          Calcular
+        </Button>
+
+        <Button className='m-1' variant="secondary" type="reset">
+          Borrar
+        </Button>
+      </FormGroup>
+
 
     </Form>
   );

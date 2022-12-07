@@ -1,4 +1,4 @@
-import logo from '../images/book-shop.png'
+import logo from '../images/cutlery.png'
 const styles = {
   imgLogo: {
     width: '10%'
