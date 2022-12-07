@@ -2,25 +2,26 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function FormComp() {
+
   return (
-    <Form className='m-5'>
-      <Form.Group className="mb-3" controlId="peso">
+    <Form className='m-5 border p-3'>
+      <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="peso">
         <Form.Label>Peso</Form.Label>
         <Form.Control className='text-center' type="text" placeholder="Introduce tu peso en kg" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="estatura">
+      <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="estatura">
         <Form.Label>Estatura</Form.Label>
-        <Form.Control className='text-center' type="text" id='estatura' placeholder="Introduce tu estatura en cm" />
+        <Form.Control className='text-center' type="text" placeholder="Introduce tu estatura en cm" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="edad">
+      <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="edad">
         <Form.Label>Edad</Form.Label>
-        <Form.Control className='text-center' type="text" id='edad' placeholder="Introduce tu edad en años" />
+        <Form.Control className='text-center' type="text" placeholder="Introduce tu edad en años" />
       </Form.Group>
 
-      <Form.Select className='mb-3 text-center' >
-        <option>Selecciona tu nivel de actividad</option>
+      <Form.Select className='mb-3 text-center p-3 rounded' >
+        <option>Indícanos tu nivel de actividad</option>
         <option value='sedentaria'>Sedentaria</option>
         <option value='ligera'>Ligera</option>
         <option value='moderada'>Moderada</option>
