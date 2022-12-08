@@ -1,24 +1,49 @@
+import React, { useState } from 'react';
 import { FormGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function FormComp() {
+function FormComp(props) {
+
+  const [peso, setPeso] = useState('')
+  const [estatura, setEstatura] = useState('')
+  const [edad, setEdad] = useState('')
+
+  const guardarPeso = (e) => {
+    setPeso(e.target.value)
+    console.log(e);
+  }
+
+  const guardarEstatura = (e) => {
+    setEstatura(e.target.value)
+    console.log(e);
+  }
+
+  const guardarEdad = (e) => {
+    setEdad(e.target.value)
+    console.log(e);
+  }
+
+  const validarForm = (e) => {
+    e.preventDefault()
+    console.log('Click');
+  }
 
   return (
-    <Form style={{width: '75%'}} className='m-auto mt-3 border p-3 text-center'>
+    <Form style={{width: '75%'}} onSubmit={validarForm} className='m-auto mt-3 border p-3 text-center'>
       <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="peso">
         <Form.Label>Peso</Form.Label>
-        <Form.Control className='text-center' type="text" placeholder="Introduce tu peso en kg" />
+        <Form.Control className='text-center' type="text" placeholder="Introduce tu peso en kg" value={peso} onChange={guardarPeso} />
       </Form.Group>
 
       <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="estatura">
         <Form.Label>Estatura</Form.Label>
-        <Form.Control className='text-center' type="text" placeholder="Introduce tu estatura en cm" />
+        <Form.Control className='text-center' type="text" placeholder="Introduce tu estatura en cm" value={estatura} onChange={guardarEstatura} />
       </Form.Group>
 
       <Form.Group className="mb-3 border p-3 rounded bg-primary" controlId="edad">
         <Form.Label>Edad</Form.Label>
-        <Form.Control className='text-center' type="text" placeholder="Introduce tu edad en años" />
+        <Form.Control className='text-center' type="text" placeholder="Introduce tu edad en años" value={edad} onChange={guardarEdad} />
       </Form.Group>
 
       <Form.Select className='mb-3 text-center p-3 rounded' >
