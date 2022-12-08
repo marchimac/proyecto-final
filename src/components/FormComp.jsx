@@ -8,6 +8,9 @@ function FormComp(props) {
   const [peso, setPeso] = useState('')
   const [estatura, setEstatura] = useState('')
   const [edad, setEdad] = useState('')
+  const [actividad, setActividad] = useState('')
+  const [genero, setGenero] = useState('')
+  const [metodo, setMetodo] = useState('')
 
   const guardarPeso = (e) => {
     setPeso(e.target.value)
@@ -21,6 +24,21 @@ function FormComp(props) {
 
   const guardarEdad = (e) => {
     setEdad(e.target.value)
+    console.log(e);
+  }
+
+  const guardarActividad = (e) => {
+    setActividad(e.target.value)
+    console.log(e);
+  }
+
+  const guardarGenero = (e) => {
+    setGenero(e.taget.value)
+    console.log(e);
+  }
+
+  const guardarMetodo = (e) => {
+    setMetodo(e.target.value)
     console.log(e);
   }
 
@@ -46,8 +64,8 @@ function FormComp(props) {
         <Form.Control className='text-center' type="text" placeholder="Introduce tu edad en años" value={edad} onChange={guardarEdad} />
       </Form.Group>
 
-      <Form.Select className='mb-3 text-center p-3 rounded' >
-        <option>Indícanos tu nivel de actividad</option>
+      <Form.Select value={actividad} onChange={guardarActividad} className='mb-3 text-center p-3 rounded' >
+        <option>Nivel de actividad</option>
         <option value='sedentaria'>Sedentaria</option>
         <option value='ligera'>Ligera</option>
         <option value='moderada'>Moderada</option>
@@ -55,8 +73,7 @@ function FormComp(props) {
         <option value='muy-intensa'>Muy intensa</option>
       </Form.Select>
 
-      <FormGroup className='mb-3 border pt-3 rounded'>
-
+      <FormGroup value={genero} onChange={guardarGenero} className='mb-3 border pt-3 rounded'>
         <Form.Label>Selecciona tu género</Form.Label>
         <Form.Group className="mb-3 d-flex justify-content-around" controlId="masculino">
           <Form.Check type="radio" name='gender' id='masculino' label="Masculino" />
@@ -67,10 +84,8 @@ function FormComp(props) {
         </Form.Group>
       </FormGroup>
 
-      <FormGroup className='mb-3 border pt-3 rounded'>
-
+      <FormGroup value={metodo} onChange={guardarMetodo} className='mb-3 border pt-3 rounded'>
         <Form.Label>Elige el metodo para el cálculo</Form.Label>
-
         <Form.Group className="mb-3 d-flex justify-content-around" controlId="harris">
           <Form.Check type="radio" name='method' id='harris' label="Harris-Benedict" />
         </Form.Group>
