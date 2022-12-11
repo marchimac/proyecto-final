@@ -12,9 +12,9 @@ function NavbarComp() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link to="/link" onClick={<Recetas />}>Recetas</Nav.Link>
-            <Nav.Link href="#link">Enlaces</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="/recetas" onClick={<Recetas />}>Recetas</Nav.Link>
+            <Nav.Link href="/informacion">Enlaces</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
