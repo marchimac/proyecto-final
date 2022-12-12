@@ -10,10 +10,11 @@ function App() {
   return (
     <>
       <HeaderComp />
-        <NavbarComp />
-        <FormComp />
-        <Api />
-        <FooterComp />
+      <NavbarComp />
+      <FormComp />
+      <Api />
+      <FooterComp />
+      <p>Prueba</p>
     </>
   );
 }
