@@ -10,10 +10,10 @@ function FormComp(props) {
   const [edad, setEdad] = useState('')
   const [actividad, setActividad] = useState('')
   const [genero, setGenero] = useState('')
-  const [metodo, setMetodo] = useState('')
+  // const [metodo, setMetodo] = useState('')
 
   const guardarPeso = (e) => {
-    setPeso(e.target.value)
+    setPeso(e.target.value) /* ref current.value */
     console.log(e);
   }
 
@@ -37,14 +37,16 @@ function FormComp(props) {
     console.log(e);
   }
 
-  const guardarMetodo = (e) => {
-    setMetodo(e.target.value)
-    console.log(e);
-  }
+  // const guardarMetodo = (e) => {
+  //   setMetodo(e.target.value)
+  //   console.log(e);
+  // }
 
   const validarForm = (e) => {
     e.preventDefault()
-    console.log('Click');
+    console.log('Click')
+    console.log({genero})
+
   }
 
   return (
@@ -84,7 +86,7 @@ function FormComp(props) {
         </Form.Group>
       </FormGroup>
 
-      <FormGroup value={metodo} onChange={guardarMetodo} className='mb-3 border pt-3 rounded'>
+      {/* <FormGroup value={metodo} onChange={guardarMetodo} className='mb-3 border pt-3 rounded'>
         <Form.Label>Elige el metodo para el cálculo</Form.Label>
         <Form.Group className="mb-3 d-flex justify-content-around" controlId="harris">
           <Form.Check type="radio" name='method' id='harris' label="Harris-Benedict" />
@@ -93,7 +95,7 @@ function FormComp(props) {
         <Form.Group className="mb-3 d-flex justify-content-around" controlId="femenino">
           <Form.Check type="radio" name='method' id='mifflin' label="Mifflin-St Jeor" />
         </Form.Group>
-      </FormGroup>
+      </FormGroup> */}
 
 
       <FormGroup className='mb-3 border p-3 rounded' >
