@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Card } from 'react-bootstrap'
+import { Card, CardGroup } from 'react-bootstrap'
 
 export default function Api() {
     
@@ -24,11 +24,14 @@ export default function Api() {
         <h2>Datos desde la API</h2>
         <h3>{nutrients.calories}</h3>
             {meals.map( (meal) => (
-                <Card className='d-inline-flex' key={meal.id}>
-                    <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
-                    <Card.Title>{meal.title}</Card.Title>
-                    <Card.Body>Ready in {meal.readyInMinutes} minutes</Card.Body>
-                </Card>
+                <CardGroup>
+                    <Card className='d-inline-flex' key={meal.id}>
+                        <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
+                        <Card.Title>{meal.title}</Card.Title>
+                        <Card.Body>Ready in {meal.readyInMinutes} minutes</Card.Body>
+                    </Card>
+                </CardGroup>
+                
             ) )}
     </>
   )
