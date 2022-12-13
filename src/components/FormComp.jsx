@@ -10,10 +10,9 @@ function FormComp(props) {
   const [edad, setEdad] = useState('')
   const [actividad, setActividad] = useState('')
   const [genero, setGenero] = useState('')
-  // const [metodo, setMetodo] = useState('')
 
   const guardarPeso = (e) => {
-    setPeso(e.target.value) /* ref current.value */
+    setPeso(e.target.value)
     console.log(e);
   }
 
@@ -36,11 +35,6 @@ function FormComp(props) {
     setGenero(e.taget.value)
     console.log(e);
   }
-
-  // const guardarMetodo = (e) => {
-  //   setMetodo(e.target.value)
-  //   console.log(e);
-  // }
 
   const validarForm = (e) => {
     e.preventDefault()
@@ -86,18 +80,6 @@ function FormComp(props) {
         </Form.Group>
       </FormGroup>
 
-      {/* <FormGroup value={metodo} onChange={guardarMetodo} className='mb-3 border pt-3 rounded'>
-        <Form.Label>Elige el metodo para el cálculo</Form.Label>
-        <Form.Group className="mb-3 d-flex justify-content-around" controlId="harris">
-          <Form.Check type="radio" name='method' id='harris' label="Harris-Benedict" />
-        </Form.Group>
-
-        <Form.Group className="mb-3 d-flex justify-content-around" controlId="femenino">
-          <Form.Check type="radio" name='method' id='mifflin' label="Mifflin-St Jeor" />
-        </Form.Group>
-      </FormGroup> */}
-
-
       <FormGroup className='mb-3 border p-3 rounded' >
         <Button className='m-1' variant="primary" type="submit">
           Calcular
@@ -107,7 +89,6 @@ function FormComp(props) {
           Borrar
         </Button>
       </FormGroup>
-
 
     </Form>
   );

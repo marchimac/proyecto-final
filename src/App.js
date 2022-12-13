@@ -14,7 +14,6 @@ function App() {
       <FormComp />
       <Api />
       <FooterComp />
-      <p>Prueba</p>
     </>
   );
 }
