@@ -4,7 +4,7 @@ import NavbarComp from './components/NavbarComp';
 import FormComp from './components/FormComp';
 import HeaderComp from './components/HeaderComp';
 import FooterComp from './components/FooterComp';
-import Api from './components/Api'
+// import Api from './components/Api'
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
       <HeaderComp />
       <NavbarComp />
       <FormComp />
-      <Api />
+      {/* <Api /> */}
       <FooterComp />
     </>
-  );
+  )
 }
 
 export default App;

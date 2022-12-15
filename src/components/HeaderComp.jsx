@@ -10,7 +10,7 @@ function HeaderComp() {
     <>
     <div className='d-flex m-3' data-testid='tested' >
       <img className='m-2' src={logo} style={styles.imgLogo} alt='' />
-      <h1 className='m-auto' >Fernando Martínez Sánchez</h1>
+      <h1 className='m-auto color' >Metabolismo basal y recetas</h1>
     </div>
     </>
   );

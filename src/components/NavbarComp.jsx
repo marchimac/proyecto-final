@@ -12,7 +12,7 @@ function NavbarComp() {
           <Nav className="me-auto" data-testid='tested' >
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="/recetas">Recetas</Nav.Link>
-            <Nav.Link href="/informacion">Enlaces</Nav.Link>
+            <Nav.Link href="/informacion">Información</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
