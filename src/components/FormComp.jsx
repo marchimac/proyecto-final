@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 // import { useRef } from 'react';
 // import React from 'react';
+// const TMB = 0
+// let TMB = 0
 
 function FormComp(props) {
 
@@ -15,26 +17,10 @@ function FormComp(props) {
   const estatura = estaturaRef
   const edad = edadRef
 
-  // const [peso, setPeso] = useState('')
-  // const [estatura, setEstatura] = useState('')
-  // const [edad, setEdad] = useState('')
   const [actividad, setActividad] = useState('')
   const [genero, setGenero] = useState('')
 
-  // const guardarPeso = (e) => {
-  //   setPeso(e.target.value)
-  //   console.log(e);
-  // }
-
-  // const guardarEstatura = (e) => {
-  //   setEstatura(e.target.value)
-  //   console.log(e);
-  // }
-
-  // const guardarEdad = (e) => {
-  //   setEdad(e.target.value)
-  //   console.log(e);
-  // }
+  // const TMB = 0
 
   const guardarActividad = (e) => {
     setActividad(e.target.value)
@@ -47,15 +33,37 @@ function FormComp(props) {
   }
 
   const handleSubmit = (e) => {
+
     e.preventDefault()
     console.log('Click')
     console.log(`El peso es ${peso.current.value} kg`)
     console.log(`La estatura es ${estatura.current.value} cm`)
     console.log(`La edad es ${edad.current.value} años`)
-    console.log(`La actividad es ${actividad}`);
-    console.log(`El genero es ${genero}`);
-
+    console.log(`La actividad es ${actividad}`)
+    console.log(`El genero es ${genero}`)
+    
+    
   }
+  
+  // if ({genero} === 'masculino' && {actividad} === 'sedentaria') {
+  //   TMB = ((({peso} * 10) + ({estatura} * 6.25) - ({edad} * 5) + 5) + 5) * 1.2
+  // } else if ({genero} === 'masculino' && {actividad} === 'sedentaria') {
+  //   TMB = ((({peso} * 10) + ({estatura} * 6.25) - ({edad} * 5) + 5) + 5) * 1.375
+  // }
+
+  // switch ({genero} = 'masculino') {
+
+  //   case {actividad} = 'sedentaria':
+  //     TMB = ((({peso} * 10) + ({estatura} * 6.25) - ({edad} * 5) + 5) + 5) * 1.2
+  //     break;
+
+  //   case {actividad} = 'ligera':
+  //     TMB = ((({peso} * 10) + ({estatura} * 6.25) - ({edad} * 5) + 5) + 5) * 1.375
+  //     break;
+  
+  //   default:
+  //     break;
+  // }
 
   return (
     <Form style={{width: '75%'}} onSubmit={handleSubmit} className='m-auto mt-3 border p-3 text-center'>
