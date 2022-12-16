@@ -4,8 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Api from './Api';
 import { useContexto } from '../context/MealsContext';
+import ShowResult from './ShowResult';
 
-function FormComp(props) {
+function FormComp() {
 
   const { setTmb } = useContexto()
 
@@ -30,19 +31,31 @@ function FormComp(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Click')
-    console.log(`El peso es ${pesoRef.current.value} kg`)
-    console.log(`La estatura es ${estaturaRef.current.value} cm`)
-    console.log(`La edad es ${edadRef.current.value} años`)
-    console.log(`La actividad es ${actividad}`)
-    console.log(`El genero es ${genero}`)
     
     if (genero === 'masculino' && actividad === 'sedentaria') {
-      TMB = (((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(pesoRef.current.value) * 5) + 5) + 5) * 1.2
-    } else if ({genero} === 'masculino' && {actividad} === 'ligera') {
-      // TMB = ((({peso} * 10) + ({estatura} * 6.25) - ({edad} * 5) + 5) + 5) * 1.375
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) + 5) * 1.2
+    } else if (genero === 'masculino' && actividad === 'ligera') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) + 5) * 1.375
+    } else if (genero === 'masculino' && actividad === 'moderada') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) + 5) * 1.55
+    } else if (genero === 'masculino' && actividad === 'intensa') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) + 5) * 1.725
+    } else if (genero === 'masculino' && actividad === 'muy-intensa') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) + 5) * 1.9
     }
-  
+    
+    if (genero === 'femenino' && actividad === 'sedentaria') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.2
+    } else if (genero === 'femenino' && actividad === 'ligera') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) -161) * 1.375
+    } else if (genero === 'femenino' && actividad === 'moderada') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.55
+    } else if (genero === 'femenino' && actividad === 'intensa') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.725
+    } else if (genero === 'femenino' && actividad === 'muy-intensa') {
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.9
+    }
+    
     setTmb(TMB)
 
   }
@@ -85,7 +98,6 @@ function FormComp(props) {
         <option value='muy-intensa'>Muy intensa</option>
       </Form.Select>
 
-
       <FormGroup className='mb-3 border p-3 rounded' >
         <Button className='m-1' variant="primary" type="submit">
           Calcular
@@ -95,6 +107,8 @@ function FormComp(props) {
           Borrar
         </Button>
       </FormGroup>
+
+      <ShowResult />
 
       <Api tmb={TMB} />
 

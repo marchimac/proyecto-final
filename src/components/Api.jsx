@@ -10,7 +10,6 @@ export default function Api() {
     const { tmb } = useContexto()
     
     useEffect( () => {
-        console.log(tmb);
         if(tmb) {
             axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=45f3f23dd164438abb1babccb1e531ac&timeFrame=day&targetCalories=${tmb}`)
                 .then( res => {
@@ -28,7 +27,7 @@ export default function Api() {
     <>
         <CardGroup >
             {meals.map( (meal) => (
-                <Card key={meal.id}>
+                <Card key={meal.id} >
                     <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
                     <Card.Title>{meal.title}</Card.Title>
                     <Card.Body>Calories: {nutrients.calories}</Card.Body>
