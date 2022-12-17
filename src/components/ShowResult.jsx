@@ -1,17 +1,15 @@
-import { useContexto } from "../context/MealsContext"
-
 import React from 'react'
+import { useContexto } from '../context/MealsContext'
 
-export default function ShowResult() {
-
-  const { tmb } = useContexto()
+function ShowResult(props) {
+  const {tmb} = useContexto
+  const mostrar = props.mostrar
 
   return (
-    <>
-      {/* if(tmb) {
-        <h2>Su metabolismo basal es de {tmb} kcal al día</h2>
-      } */}
-      {tmb}
-    </>
+    <div>
+      {mostrar ? <h2>{tmb}</h2> : null}
+    </div>
   )
 }
+
+export default ShowResult

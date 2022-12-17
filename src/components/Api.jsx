@@ -25,7 +25,37 @@ export default function Api() {
 
   return (
     <>
-        <CardGroup >
+        <CardGroup className='mt-5 border rounded' >
+            {meals.map( (meal) => (
+                <Card key={meal.id} >
+                    <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
+                    <Card.Title>{meal.title}</Card.Title>
+                    <Card.Body>Calories: {nutrients.calories}</Card.Body>
+                    <Card.Body>Carbohydrates: {nutrients.carbohydrates}</Card.Body>
+                    <Card.Body>Fats: {nutrients.fat}</Card.Body>
+                    <Card.Body>Proteins: {nutrients.protein}</Card.Body>
+                    <Card.Body>Ready in {meal.readyInMinutes} minutes</Card.Body>
+                    <Card.Body className='recipes'>Link to the recipe:</Card.Body>
+                    <Card.Link className='mealsLink'>{meal.sourceUrl}</Card.Link>
+                </Card>
+                ) )}
+        </CardGroup>
+        <CardGroup className='mt-5' >
+            {meals.map( (meal) => (
+                <Card key={meal.id} >
+                    <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
+                    <Card.Title>{meal.title}</Card.Title>
+                    <Card.Body>Calories: {nutrients.calories}</Card.Body>
+                    <Card.Body>Carbohydrates: {nutrients.carbohydrates}</Card.Body>
+                    <Card.Body>Fats: {nutrients.fat}</Card.Body>
+                    <Card.Body>Proteins: {nutrients.protein}</Card.Body>
+                    <Card.Body>Ready in {meal.readyInMinutes} minutes</Card.Body>
+                    <Card.Body className='recipes'>Link to the recipe:</Card.Body>
+                    <Card.Link className='mealsLink'>{meal.sourceUrl}</Card.Link>
+                </Card>
+                ) )}
+        </CardGroup>
+        <CardGroup className='mt-5' >
             {meals.map( (meal) => (
                 <Card key={meal.id} >
                     <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
