@@ -2,7 +2,7 @@ import React from 'react'
 import { useContexto } from '../context/MealsContext'
 
 function ShowResult(props) {
-  const {tmb} = useContexto
+  const {tmb} = useContexto()
   const mostrar = props.mostrar
 
   return (

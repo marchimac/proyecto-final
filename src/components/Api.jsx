@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Card, CardGroup } from 'react-bootstrap'
 import axios from 'axios'
 import { useContexto } from '../context/MealsContext'
+import { Link } from 'react-router-dom'
 
 export default function Api() {
     
@@ -26,20 +27,28 @@ export default function Api() {
   return (
     <>
         <CardGroup className='mt-5 border rounded' >
-            {meals.map( (meal) => (
+            {meals?.map( (meal) => (
                 <Card key={meal.id} >
                     <Card.Img variant='bottom' src={`https://webknox.com/recipeImages/${meal.id}-556x370.jpg`}></Card.Img>
                     <Card.Title>{meal.title}</Card.Title>
-                    <Card.Body>Calories: {nutrients.calories}</Card.Body>
-                    <Card.Body>Carbohydrates: {nutrients.carbohydrates}</Card.Body>
-                    <Card.Body>Fats: {nutrients.fat}</Card.Body>
-                    <Card.Body>Proteins: {nutrients.protein}</Card.Body>
                     <Card.Body>Ready in {meal.readyInMinutes} minutes</Card.Body>
                     <Card.Body className='recipes'>Link to the recipe:</Card.Body>
-                    <Card.Link className='mealsLink'>{meal.sourceUrl}</Card.Link>
+                    <Card.Link className='mealsLink'><Link to={meal.sourceUrl} >Recipe</Link></Card.Link>
                 </Card>
                 ) )}
         </CardGroup>
+                { Object.keys(nutrients).length !== 0 &&
+                    <div>
+                        {console.log({nutrients})}
+                        <Card.Body>Calories: {nutrients.calories}</Card.Body>
+                        <Card.Body>Carbohydrates: {nutrients.carbohydrates}</Card.Body>
+                        <Card.Body>Fats: {nutrients.fat}</Card.Body>
+                        <Card.Body>Proteins: {nutrients.protein}</Card.Body>
+                    </div>
+                }
+
+
+                
         <CardGroup className='mt-5' >
             {meals.map( (meal) => (
                 <Card key={meal.id} >
@@ -55,6 +64,17 @@ export default function Api() {
                 </Card>
                 ) )}
         </CardGroup>
+                { Object.keys(nutrients).length !== 0 &&
+                    <div>
+                        {console.log({nutrients})}
+                        <Card.Body>Calories: {nutrients.calories}</Card.Body>
+                        <Card.Body>Carbohydrates: {nutrients.carbohydrates}</Card.Body>
+                        <Card.Body>Fats: {nutrients.fat}</Card.Body>
+                        <Card.Body>Proteins: {nutrients.protein}</Card.Body>
+                    </div>
+                }
+
+
         <CardGroup className='mt-5' >
             {meals.map( (meal) => (
                 <Card key={meal.id} >
@@ -70,6 +90,15 @@ export default function Api() {
                 </Card>
                 ) )}
         </CardGroup>
+                { Object.keys(nutrients).length !== 0 &&
+                    <div>
+                        {console.log({nutrients})}
+                        <Card.Body>Calories: {nutrients.calories}</Card.Body>
+                        <Card.Body>Carbohydrates: {nutrients.carbohydrates}</Card.Body>
+                        <Card.Body>Fats: {nutrients.fat}</Card.Body>
+                        <Card.Body>Proteins: {nutrients.protein}</Card.Body>
+                    </div>
+                }
     </>
   )
 }

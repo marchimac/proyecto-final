@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FormGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Api from './Api';
 import { useContexto } from '../context/MealsContext';
 import ShowResult from './ShowResult';
 
@@ -47,7 +46,7 @@ function FormComp() {
     if (genero === 'femenino' && actividad === 'sedentaria') {
       TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.2
     } else if (genero === 'femenino' && actividad === 'ligera') {
-      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) -161) * 1.375
+      TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.375
     } else if (genero === 'femenino' && actividad === 'moderada') {
       TMB = ((parseFloat(pesoRef.current.value) * 10) + (parseFloat(estaturaRef.current.value) * 6.25) - (parseFloat(edadRef.current.value) * 5) - 161) * 1.55
     } else if (genero === 'femenino' && actividad === 'intensa') {
@@ -109,8 +108,6 @@ function FormComp() {
       </FormGroup>
 
       <ShowResult />
-
-      <Api tmb={TMB} />
 
     </Form>
     
